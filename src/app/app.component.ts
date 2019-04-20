@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-
+import { Model } from "./repository.model";
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
+  selector: 'app',
+  templateUrl: './template.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  model: Model = new Model();
 }

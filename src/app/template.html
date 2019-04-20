@@ -1,3 +1,10 @@
+<ng-template #titleTemplate>
+	<h4 class="p-2 bg-success text-white">Repeated Content</h4>
+</ng-template>
+
+
+<ng-template [ngTemplateOutlet]="titleTemplate"></ng-template>
+
 <div class="text-white m-2">
 	<div class="bg-info p-2">
 		There are {{getProductCount()}} products.
@@ -9,7 +16,7 @@
 			<th></th><th>Name</th><th>Category</th><th>Price</th>
 		</tr>
 		<tr *ngFor="let item of getProducts(); let i = index; let odd = odd;
-			let first = first; let last = last"
+			let first = first; let last = last; trackBy:getKey"
 			[class.bg-primary]="odd" [class.bg-info]="!odd"
 			[class.bg-warning]="first || last">
 			<td>{{i + 1}}</td>
@@ -20,3 +27,5 @@
 	</table>
 
 </div>
+
+<ng-template [ngTemplateOutlet]="titleTemplate"></ng-template>

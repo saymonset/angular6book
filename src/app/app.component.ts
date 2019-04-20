@@ -9,32 +9,9 @@ import { Product } from "./product.model";
 export class AppComponent {
   model: Model = new Model();
 
-  constructor(ref: ApplicationRef) {
-		(<any>window).appRef = ref;
-		(<any>window).model = this.model;
-	}
+ 
 
-	getClasses(key: number): string {
-		let product = this.model.getProduct(key);
-		return "p-2 " + (product.price < 50 ? "bg-info" : "bg-warning");
-	}
-
-	getClassMap(key: number): Object {
-		let product = this.model.getProduct(key);
-			return {
-					"text-center bg-danger": product.name == "Kayak",
-					"bg-info": product.price < 50
-			};
-		}
-
-		getProductByPosition(position: number): Product {
-			return this.model.getProducts()[position];
-		}
-
-		getClassesByPosition(position: number): string {
-			let product = this.getProductByPosition(position);
-			return "p-2 " + (product.price < 50 ? "bg-info" : "bg-warning");
-		}
+	 
 
 		getProduct(key: number): Product {
 			return this.model.getProduct(key);
@@ -42,13 +19,10 @@ export class AppComponent {
 		getProducts(): Product[] {
 			return this.model.getProducts();
 			}
-		getProductCount(): number {
-			return this.getProducts().length;
-			}
-			
-
-			getKey(index: number, product: Product) {
-				return product.id;
-			}
-			targetName: string = "Kayak";
+		
+		selectedProduct: string;
+		
+		getSelected(product: Product): boolean {
+			return product.name == this.selectedProduct;
+		}
 }

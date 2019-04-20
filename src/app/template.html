@@ -1,39 +1,12 @@
-
-
 <div class="text-white m-2">
-	<div class="text-white m-2">
-		<div [ngClass]="getClassesByPosition(0)">
-			The first product is {{getProductByPosition(0).name}}.
-		</div>
-		<div [ngClass]="getClassesByPosition(1)">
-			The second product is {{getProductByPosition(1).name}}
-		</div>
+	<div class="bg-info p-2">
+		There are {{getProductCount()}} products.
 	</div>
 
+	 <div class="bg-info p-2 mt-1" [ngSwitch]="getProductCount()">
+		<span *ngSwitchCase="2">There are two products</span>
+		<span *ngSwitchCase="5">There are five products</span>
+		<span *ngSwitchDefault>This is the default</span>
+	</div>
 
-	<div class="p-2" [ngClass]="getClassMap(1)">
-		The first product is {{model.getProduct(1).name}}.
-	</div>
-	<div class="p-2" [ngClass]="getClassMap(2)">
-		The second product is {{model.getProduct(2).name}}.
-	</div>
-	<div class="p-2" [ngClass]="{'bg-success': model.getProduct(3).price < 50,
-							'bg-info': model.getProduct(3).price >= 50}">
-		The third product is {{model.getProduct(3).name}}
-	</div>
 </div>
-
-<div class="form-group m-2">
-<label>Name:</label>
-<input class="form-control" [value]="model.getProduct(1)?.name || 'None'" />
-</div>
-<table class="table table-sm table-bordered table-striped mt-2">
-	<tr>
-		<th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
-	</tr>
-	<tr>
-		<td [attr.colspan]="model.getProducts().length">
-			{{model.getProduct(1)?.name || 'None'}}
-		</td>
-	</tr>
-</table>

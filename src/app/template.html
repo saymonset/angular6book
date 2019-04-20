@@ -16,6 +16,7 @@
 
 	<div class="form-group">
 		<label>Product Name</label>
-		<input #product class="form-control" (input)="false" />
+		<input #product class="form-control"
+				(keyup.enter)="selectedProduct=product.value" />
 	</div>
 </div>

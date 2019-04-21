@@ -32,6 +32,7 @@ export class AppComponent {
 
 		addProduct(p: Product) {
 			console.log("New Product: " + this.jsonProduct);
+			this.model.saveProduct(p);
 		}
 
 
@@ -48,7 +49,7 @@ export class AppComponent {
 							messages.push(`A ${thing} must be at least ${state.errors['minlength'].requiredLength} characters`);
 							break;
 
-					
+
 						case "pattern":
 							messages.push(`The ${thing} contains illegal characters`);
 							break;

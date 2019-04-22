@@ -31,7 +31,7 @@ export class AppComponent {
 		}
 
 		addProduct(p: Product) {
-			console.log("New Product: " + this.jsonProduct);
+			//console.log("New Product: " + this.jsonProduct);
 			this.model.saveProduct(p);
 		}
 
@@ -59,6 +59,9 @@ export class AppComponent {
 				return messages;
 			}
 
+			deleteProduct(key: number) {
+				this.model.deleteProduct(key);
+			}
 
 			formSubmitted: boolean = false;
 
@@ -83,6 +86,7 @@ export class AppComponent {
 						return messages;
 					}
 
+		showTable: boolean = true;
   
 
 }

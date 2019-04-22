@@ -63,12 +63,13 @@ export class PaIteratorDirective {
 		        odd: boolean; even: boolean;
 				first: boolean; last: boolean;
 				view: ViewRef;
+				index : number;
 				constructor(public $implicit: any,	public position: number, total: number ) {
 						this.setData(position, total);
 				}
 
 				setData(index: number, total: number) {
-				//	this.index = index;
+					this.index = index;
 					this.odd = index % 2 == 1;
 					this.even = !this.odd;
 					this.first = index == 0;

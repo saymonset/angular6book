@@ -68,7 +68,7 @@ export class PaIteratorDirective {
 				}
 
 				setData(index: number, total: number) {
-					this.index = index;
+				//	this.index = index;
 					this.odd = index % 2 == 1;
 					this.even = !this.odd;
 					this.first = index == 0;

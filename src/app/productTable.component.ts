@@ -1,8 +1,9 @@
 import { Component, Input, ViewChildren, QueryList } from "@angular/core";
-import { Model } from "./repository.model";
-import { Product } from "./product.model";
-import { PaCellColor } from "./cellColor.directive";
-import { DiscountService } from "./discount.service";
+import { Model } from "./model/repository.model";
+import { Product } from "./model/product.model";
+import { ProductFormGroup } from "./model/form.model";
+import { PaCellColor } from "./common/cellColor.directive";
+import { DiscountService } from "./common/discount.service";
 @Component({
 	selector: "paProductTable",
 	templateUrl: "productTable.component.html"

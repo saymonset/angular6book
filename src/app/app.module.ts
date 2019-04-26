@@ -1,22 +1,14 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { ProductTableComponent } from "./productTable.component";
-import { ProductFormComponent } from "./productForm.component";
-import { PaDiscountDisplayComponent } from "./discountDisplay.component";
-import { PaDiscountEditorComponent } from "./discountEditor.component";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+//import { AppComponent } from './app.component';
 import { ModelModule } from "./model/model.module";
-import { CommonModule } from "./common/common.module";
-
-
-
+import { CoreModule } from "./core/core.module";
+import { TableComponent } from "./core/table.component";
+import { FormComponent } from "./core/form.component";
+import { MessageModule } from "./messages/message.module";
+import { MessageComponent } from "./messages/message.component";
 @NgModule({
-       imports: [BrowserModule, FormsModule, ReactiveFormsModule,
-        ModelModule, CommonModule],
-        declarations: [AppComponent, ProductTableComponent,
-        ProductFormComponent, PaDiscountDisplayComponent, PaDiscountEditorComponent],
-        bootstrap: [ProductFormComponent, ProductTableComponent]
-           
+	imports: [BrowserModule, ModelModule, CoreModule, MessageModule],
+	bootstrap: [TableComponent, FormComponent, MessageComponent]
 })
 export class AppModule { }
